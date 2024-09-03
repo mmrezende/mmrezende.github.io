@@ -1,0 +1,89 @@
+/* minireset.css para compatibilidade entre navegadores*/
+@import url("https://cdn.jsdelivr.net/gh/jgthms/minireset.css@master/minireset.min.css");
+
+html, body {
+    background-color: black;
+}
+
+* {
+    font-family: monospace, monospace;
+    color: #f1f1f1;
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav a {
+    text-decoration: none;
+    padding: 15px;
+    margin: 15px;
+    font-weight: bold;
+    border: 3px solid #f1f1f1;
+    border-radius: 5%;
+    font-size: large;
+    transition: .5s;
+}
+
+nav a:hover {
+    background-color: white;
+    color: black;
+}
+
+img#profile-picture {
+    border-radius: 100%;
+    margin-right: 80px;
+    margin-top: 80px;
+}
+
+ul#description li{
+    font-weight: bold;
+}
+
+/* Formação */
+#formacao img {
+    margin: auto;
+}
+
+/* Projetos */
+#projetos ul {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 80px;
+}
+
+#projetos p {
+    font-size: large;
+    margin-bottom: 40px;
+    margin-top: 10px;
+    width: 800px;
+    text-align: justify;
+}
+
+#projetos a {
+    font-weight: bold;
+    font-size: large;
+    text-align: center;
+    display: block;
+    color: lightblue;
+}
+
+/* Contato */
+#contato h1 {
+    text-align: center;
+    font-weight: bold;
+    font-size: x-large;
+    margin-top: 80px;
+}
+#contato ul {
+    margin-top: 20px;
+    flex-direction: column;
+}
+
+#contato li {
+    margin: 10px;
+}
