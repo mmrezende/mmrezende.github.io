@@ -27,7 +27,7 @@
             </nav>
         </div>
     </header>
-    <main>
+    <main class="projects-page">
         <div class="site-shell">
             <section class="page-intro glass-card hero-copy">
                 <div class="section-heading">
@@ -35,32 +35,26 @@
                         <span class="eyebrow">Portfólio técnico</span>
                         <h1>Projetos em destaque</h1>
                     </div>
-                    <p>
-                        Recorte curto para mostrar produto web, utilitários e base computacional.
-                    </p>
                 </div>
             </section>
 
             <section class="section">
                 <div class="project-grid">
                     <article class="project-card glass-card featured">
-                        <div>
-                            <span class="eyebrow">Destaque atual</span>
+                        <div class="featured-copy">
+                            <span class="eyebrow">Projeto principal</span>
                             <h2>Max Late Game</h2>
                             <div class="project-meta">Laravel • Vue 3 • MySQL • PHPUnit • Playwright</div>
-                            <p>
-                                Plataforma para gestão de torneios, pagamentos e assinaturas, com portal público, backoffice e área do jogador.
-                            </p>
                             <ul class="bullet-list">
-                                <li>Fluxos completos de produto e operação.</li>
+                                <li>Portal público, backoffice e área do jogador.</li>
                                 <li>Backend Laravel com SPA em Vue.</li>
-                                <li>Documentação e demonstração visual já prontas.</li>
+                                <li>Fluxos de produto e operação documentados.</li>
                             </ul>
                             <div class="project-links">
                                 <a class="project-link primary" href="https://github.com/mmrezende/auten-max-late-game" target="_blank" rel="noreferrer">Abrir repositório</a>
                             </div>
                         </div>
-                        <div>
+                        <div class="featured-visuals">
                             <h3>Recorte visual</h3>
                             <div class="chip-row">
                                 <span class="chip">Portal público</span>
@@ -68,18 +62,18 @@
                                 <span class="chip">Área do jogador</span>
                             </div>
                             <div class="screenshot-grid">
-                                <figure class="screenshot-card">
+                                <a class="screenshot-card screenshot-trigger" href="#mlg-users" aria-label="Abrir imagem ampliada de gestão de usuários">
                                     <img src="/assets/max-late-game/04-admin-users.png" alt="Gestão de usuários do projeto Max Late Game" />
                                     <span>Gestão de usuários</span>
-                                </figure>
-                                <figure class="screenshot-card">
+                                </a>
+                                <a class="screenshot-card screenshot-trigger" href="#mlg-plans" aria-label="Abrir imagem ampliada de planos públicos">
                                     <img src="/assets/max-late-game/02-public-home-plans.png" alt="Planos públicos do projeto Max Late Game" />
                                     <span>Planos públicos</span>
-                                </figure>
-                                <figure class="screenshot-card">
+                                </a>
+                                <a class="screenshot-card screenshot-trigger" href="#mlg-dashboard" aria-label="Abrir imagem ampliada do dashboard administrativo">
                                     <img src="/assets/max-late-game/03-admin-dashboard.png" alt="Dashboard administrativo do projeto Max Late Game" />
                                     <span>Dashboard admin</span>
-                                </figure>
+                                </a>
                             </div>
                         </div>
                     </article>
@@ -111,6 +105,18 @@
                         </div>
                     </article>
                 </div>
+            </section>
+
+            <section class="image-modals" aria-hidden="true">
+                <a class="image-modal" id="mlg-users" href="/projetos/" aria-label="Fechar visualização ampliada">
+                    <img src="/assets/max-late-game/04-admin-users.png" alt="Gestão de usuários do projeto Max Late Game ampliada" />
+                </a>
+                <a class="image-modal" id="mlg-plans" href="/projetos/" aria-label="Fechar visualização ampliada">
+                    <img src="/assets/max-late-game/02-public-home-plans.png" alt="Planos públicos do projeto Max Late Game ampliada" />
+                </a>
+                <a class="image-modal" id="mlg-dashboard" href="/projetos/" aria-label="Fechar visualização ampliada">
+                    <img src="/assets/max-late-game/03-admin-dashboard.png" alt="Dashboard administrativo do projeto Max Late Game ampliada" />
+                </a>
             </section>
         </div>
     </main>
