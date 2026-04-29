@@ -222,6 +222,11 @@ main {
     margin-top: 24px;
 }
 
+.hero-actions .button,
+.hero-actions .button-secondary {
+    min-width: 220px;
+}
+
 .button,
 .button-secondary {
     display: inline-flex;
@@ -245,6 +250,12 @@ main {
 .button-secondary {
     border: 1px solid rgba(255, 255, 255, 0.14);
     background: rgba(255, 255, 255, 0.03);
+}
+
+.button-secondary.emphasis {
+    background: rgba(86, 194, 255, 0.12);
+    border-color: rgba(86, 194, 255, 0.36);
+    color: var(--text);
 }
 
 .button:hover,
@@ -380,6 +391,13 @@ main {
     grid-template-columns: 1.1fr 0.9fr;
     gap: 20px;
     background: rgba(11, 22, 38, 0.82);
+    align-items: stretch;
+}
+
+.project-card.featured > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .project-card p,
@@ -455,14 +473,18 @@ ol.clean-list {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-height: 42px;
-    padding: 0 15px;
+    min-height: 44px;
+    padding: 0 18px;
     border-radius: 999px;
     text-decoration: none;
     font-weight: 700;
     border: 1px solid rgba(255, 255, 255, 0.1);
     background: rgba(255, 255, 255, 0.04);
     transition: transform 180ms ease, border-color 180ms ease, background-color 180ms ease;
+}
+
+.project-links {
+    margin-top: 18px;
 }
 
 .project-link.primary,
@@ -492,6 +514,15 @@ ol.clean-list {
 .two-column-text {
     columns: 2;
     column-gap: 28px;
+}
+
+.lead-grid {
+    display: grid;
+    gap: 14px;
+}
+
+.lead-grid p {
+    margin: 0;
 }
 
 .two-column-text p + p {
@@ -533,9 +564,12 @@ ol.clean-list {
     gap: 14px;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     margin-top: 18px;
+    flex: 1;
 }
 
 .screenshot-card {
+    display: flex;
+    flex-direction: column;
     overflow: hidden;
     border-radius: var(--radius-md);
     border: 1px solid rgba(255, 255, 255, 0.08);
@@ -544,8 +578,9 @@ ol.clean-list {
 
 .screenshot-card img {
     width: 100%;
-    aspect-ratio: 16 / 10;
+    aspect-ratio: 16 / 9;
     object-fit: cover;
+    flex: 1;
 }
 
 .screenshot-card span {
@@ -553,6 +588,13 @@ ol.clean-list {
     padding: 12px 14px;
     color: var(--text-muted);
     font-size: 0.88rem;
+}
+
+@media (min-width: 1025px) {
+    .screenshot-card img {
+        aspect-ratio: 16 / 8.5;
+        min-height: 200px;
+    }
 }
 
 @media (max-width: 1024px) {
@@ -634,6 +676,21 @@ ol.clean-list {
 
     .stats-grid {
         grid-template-columns: 1fr;
+    }
+
+    .hero-actions .button,
+    .hero-actions .button-secondary {
+        min-width: 0;
+        width: 100%;
+    }
+
+    .screenshot-card img {
+        aspect-ratio: 16 / 8;
+        max-height: 150px;
+    }
+
+    .project-links {
+        margin-top: 16px;
     }
 
     .footer-inner {
