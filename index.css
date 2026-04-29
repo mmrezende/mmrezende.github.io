@@ -24,6 +24,8 @@ body {
     min-height: 100vh;
     color: var(--text);
     font-family: "Manrope", sans-serif;
+    position: relative;
+    overflow-x: clip;
     background:
     radial-gradient(circle at top left, rgba(46, 144, 250, 0.16), transparent 28%),
     radial-gradient(circle at top right, rgba(123, 240, 198, 0.1), transparent 20%),
@@ -46,28 +48,48 @@ body::after {
     content: "";
     position: fixed;
     inset: 0;
-    background-image:
-        url("/assets/visuals/tech-left.svg"),
-        url("/assets/visuals/tech-right.svg"),
-        url("/assets/visuals/tech-orbit.svg"),
-        radial-gradient(circle at 8% 18%, rgba(86, 194, 255, 0.08), transparent 18%),
-        radial-gradient(circle at 92% 26%, rgba(123, 240, 198, 0.08), transparent 18%);
-    background-position:
-        left -120px top 140px,
-        right -120px top 140px,
-        center top,
-        center center,
-        center center;
-    background-size:
-        min(22vw, 300px) auto,
-        min(22vw, 300px) auto,
-        min(1180px, 96vw) auto,
-        auto,
-        auto;
-    background-repeat: no-repeat;
+    background:
+        radial-gradient(circle at 12% 16%, rgba(86, 194, 255, 0.06), transparent 16%),
+        radial-gradient(circle at 88% 24%, rgba(123, 240, 198, 0.05), transparent 18%);
     pointer-events: none;
-    opacity: 0.8;
-    mix-blend-mode: screen;
+    opacity: 0.7;
+}
+
+.page-decor {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.page-decor-visual {
+    position: absolute;
+    user-select: none;
+}
+
+.page-decor-left {
+    top: 126px;
+    left: clamp(-88px, calc(50vw - (var(--content-width) / 2) - 84px), 6px);
+    width: min(23vw, 286px);
+    opacity: 0.24;
+    transform: translateX(-4px);
+}
+
+.page-decor-center {
+    top: 188px;
+    left: 50%;
+    width: min(68vw, 820px);
+    opacity: 0.11;
+    transform: translateX(-50%);
+}
+
+.page-decor-right {
+    top: 130px;
+    right: clamp(-90px, calc(50vw - (var(--content-width) / 2) - 88px), 4px);
+    width: min(24vw, 300px);
+    opacity: 0.26;
+    filter: drop-shadow(0 0 22px rgba(86, 194, 255, 0.16));
 }
 
 * {
@@ -85,7 +107,7 @@ img {
 
 .site-shell {
     position: relative;
-    z-index: 1;
+    z-index: 2;
     width: min(calc(100% - 40px), var(--content-width));
     margin: 0 auto;
 }
@@ -226,12 +248,10 @@ main {
     margin-top: 14px;
     font-size: clamp(2.2rem, 4.6vw, 4rem);
     line-height: 1.02;
-    max-width: 16ch;
 }
 
 .hero-copy p {
     margin-top: 16px;
-    max-width: 58ch;
     color: var(--text-muted);
     font-size: 0.98rem;
     line-height: 1.7;
@@ -443,6 +463,30 @@ main {
     text-align: center;
 }
 
+.projects-page .project-card.featured .featured-copy {
+    align-items: flex-start;
+    text-align: left;
+}
+
+.eyebrow {
+    margin-bottom: 10px;
+}
+
+.projects-page .project-card.featured .featured-copy h2 {
+    margin-top: 0;
+}
+
+.projects-page .project-card.featured .featured-copy .project-meta,
+.projects-page .project-card.featured .featured-copy .bullet-list,
+.projects-page .project-card.featured .featured-copy p,
+.projects-page .project-card.featured .featured-copy li {
+    text-align: left;
+}
+
+.projects-page .project-card.featured .featured-copy .bullet-list {
+    margin-inline: 0;
+}
+
 .projects-page .featured-copy .bullet-list {
     width: min(100%, 34rem);
     margin-inline: auto;
@@ -470,8 +514,64 @@ main {
     font-size: 0.95rem;
 }
 
+.featured-timeline-item {
+    grid-column: 1 / -1;
+    padding: 22px 22px 20px;
+    background: linear-gradient(135deg, rgba(11, 22, 38, 0.92), rgba(8, 18, 31, 0.82));
+}
+
+.featured-timeline-item .featured-bullet-list {
+    margin-top: 4px;
+    padding-left: 20px;
+    gap: 12px;
+}
+
+.featured-timeline-item .featured-bullet-list li {
+    color: var(--text-muted);
+    font-size: 1rem;
+    line-height: 1.72;
+}
+
+.contact-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 14px;
+}
+
+.contact-card-head {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.contact-icon-shell {
+    width: 54px;
+    height: 54px;
+    flex: 0 0 54px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(9, 18, 32, 0.82);
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.03);
+}
+
+.contact-card-icon {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+}
+
+.contact-card-head h2,
+.contact-card-head h3 {
+    margin: 0;
+}
+
 .tag-row,
-.chip-row {
+.chip-row,
+.tech-badge-grid {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
@@ -498,6 +598,40 @@ main {
 .chip {
     background: rgba(255, 184, 107, 0.12);
     color: var(--warm);
+}
+
+.tech-badge-grid {
+    gap: 10px;
+}
+
+.tech-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    min-height: 42px;
+    padding: 8px 12px;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.04);
+    color: var(--text);
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+}
+
+.tech-badge img {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+    flex: 0 0 18px;
+}
+
+.tech-badge span {
+    line-height: 1;
+}
+
+.stack-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 ul.clean-list,
@@ -564,6 +698,14 @@ ol.clean-list {
     margin-bottom: 16px;
 }
 
+.page-intro-header {
+    margin-top: 0;
+}
+
+.page-intro-header .section-heading {
+    margin-bottom: 12px;
+}
+
 .two-column-text {
     columns: 2;
     column-gap: 28px;
@@ -576,6 +718,8 @@ ol.clean-list {
 
 .lead-grid p {
     margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.6;
 }
 
 .two-column-text p + p {
@@ -613,6 +757,46 @@ ol.clean-list {
     gap: 16px;
     color: var(--text-muted);
     font-size: 0.92rem;
+}
+
+.cta-panel {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 24px;
+    align-items: center;
+    padding: 28px 30px;
+    background: linear-gradient(135deg, rgba(11, 22, 38, 0.92), rgba(8, 18, 31, 0.82));
+}
+
+.cta-panel p {
+    margin-top: 14px;
+    max-width: 56ch;
+    color: var(--text-muted);
+    line-height: 1.7;
+}
+
+.contact-spotlight {
+    display: flex;
+    justify-content: center;
+}
+
+.contact-spotlight-card {
+    width: 100%;
+    padding: 24px 28px;
+    background: linear-gradient(135deg, rgba(11, 22, 38, 0.9), rgba(8, 18, 31, 0.78));
+}
+
+.contact-spotlight-card p {
+    color: var(--text-muted);
+}
+
+.contact-spotlight-card .contact-links {
+    justify-content: flex-start;
+    margin-top: 18px;
+}
+
+.cta-panel .button-row {
+    justify-content: flex-end;
 }
 
 .compact-grid {
@@ -711,6 +895,7 @@ ol.clean-list {
 
 @media (max-width: 1024px) {
     .hero,
+    .cta-panel,
     .project-card.featured,
     .project-grid,
     .contact-grid,
@@ -751,20 +936,15 @@ ol.clean-list {
 }
 
 @media (max-width: 780px) {
-    body::after {
-        background-image:
-            url("/assets/visuals/tech-orbit.svg"),
-            radial-gradient(circle at 8% 18%, rgba(86, 194, 255, 0.06), transparent 18%),
-            radial-gradient(circle at 92% 26%, rgba(123, 240, 198, 0.06), transparent 18%);
-        background-position:
-            center top,
-            center center,
-            center center;
-        background-size:
-            min(140vw, 900px) auto,
-            auto,
-            auto;
-        opacity: 0.55;
+    .page-decor-left,
+    .page-decor-right {
+        display: none;
+    }
+
+    .page-decor-center {
+        top: 146px;
+        width: min(128vw, 760px);
+        opacity: 0.1;
     }
 
     .site-header-inner,
@@ -818,12 +998,18 @@ ol.clean-list {
         flex-direction: column;
     }
 
+    .contact-card-head {
+        align-items: flex-start;
+    }
+
     .stats-grid {
         grid-template-columns: 1fr;
     }
 
     .hero-actions .button,
-    .hero-actions .button-secondary {
+    .hero-actions .button-secondary,
+    .cta-panel .button,
+    .cta-panel .button-secondary {
         min-width: 0;
         width: 100%;
     }
@@ -843,5 +1029,13 @@ ol.clean-list {
 
     .footer-inner {
         flex-direction: column;
+    }
+
+    .cta-panel {
+        padding: 22px 20px;
+    }
+
+    .cta-panel .button-row {
+        justify-content: stretch;
     }
 }

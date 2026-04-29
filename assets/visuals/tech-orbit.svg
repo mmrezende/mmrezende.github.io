@@ -1,35 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1200" fill="none">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" fill="none">
   <defs>
-    <linearGradient id="a" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#56C2FF" stop-opacity="0.18"/>
-      <stop offset="1" stop-color="#7BF0C6" stop-opacity="0.08"/>
-    </linearGradient>
-    <radialGradient id="b" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(800 600) scale(600 420)">
-      <stop stop-color="#56C2FF" stop-opacity="0.12"/>
-      <stop offset="1" stop-color="#56C2FF" stop-opacity="0"/>
-    </radialGradient>
+    <pattern id="dots" width="36" height="36" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="2" fill="#FFFFFF" fill-opacity="0.1"/>
+    </pattern>
   </defs>
-  <rect width="1600" height="1200" fill="url(#b)"/>
-  <g opacity="0.6" stroke="url(#a)" stroke-width="2">
-    <path d="M166 912c178-244 400-354 628-354s426 110 640 354"/>
-    <path d="M148 296c194 224 404 330 646 330s450-106 658-330"/>
-    <path d="M248 1048c156-172 316-258 480-258 166 0 332 86 498 258"/>
-  </g>
-  <g fill="#FFFFFF" fill-opacity="0.14">
-    <circle cx="166" cy="912" r="12"/>
-    <circle cx="794" cy="558" r="16"/>
-    <circle cx="1442" cy="912" r="12"/>
-    <circle cx="148" cy="296" r="11"/>
-    <circle cx="802" cy="626" r="12"/>
-    <circle cx="1458" cy="296" r="11"/>
-    <circle cx="248" cy="1048" r="10"/>
-    <circle cx="802" cy="790" r="11"/>
-    <circle cx="1140" cy="1048" r="10"/>
-  </g>
-  <g stroke="#FFFFFF" stroke-opacity="0.08" stroke-width="2" stroke-linecap="round">
-    <path d="M120 120h220M120 156h144M124 192h188"/>
-    <path d="M1260 120h200M1330 156h130M1288 192h168"/>
-    <path d="M118 1082h210M118 1118h138M122 1154h174"/>
-    <path d="M1268 1082h194M1324 1118h138M1280 1154h166"/>
-  </g>
+  <rect width="1600" height="900" fill="url(#dots)" opacity="0.26"/>
+  <path d="M318 450H1282" stroke="#FFFFFF" stroke-opacity="0.08" stroke-width="2" stroke-dasharray="4 14"/>
+  <path d="M482 286H1118" stroke="#56C2FF" stroke-opacity="0.08" stroke-width="2" stroke-dasharray="2 18"/>
+  <path d="M482 614H1118" stroke="#7BF0C6" stroke-opacity="0.08" stroke-width="2" stroke-dasharray="2 18"/>
+  <circle cx="800" cy="450" r="118" stroke="#56C2FF" stroke-opacity="0.08" stroke-width="2"/>
+  <circle cx="800" cy="450" r="58" stroke="#FFFFFF" stroke-opacity="0.08" stroke-width="2"/>
 </svg>
