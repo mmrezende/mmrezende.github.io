@@ -4,39 +4,122 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="description" content="Projetos selecionados de Mateus Rezende, com destaque para produtos web, bibliotecas e fundamentos de computação." />
+    <title>Projetos | Mateus Rezende</title>
     <link rel="stylesheet" type="text/css" href="../index.css">
 </head>
 
 <body>
-    <header>
-        <!-- Menu de navegação -->
-        <nav class="flex">
-            <a href="/">Sobre mim</a>
-            <a href="/formacao">Formação</a>
-            <a href="/projetos">Meus Projetos</a>
-            <a href="/contato">Contato</a>
-        </nav>
+    <header class="site-header">
+        <div class="site-header-inner">
+            <a class="brand" href="/">
+                <span class="brand-mark"><img src="../assets/pato-baile.gif" alt="Pato animado" /></span>
+                <span class="brand-text">
+                    <strong>Mateus Rezende</strong>
+                    <span>Seleção de projetos e entregas técnicas</span>
+                </span>
+            </a>
+            <nav class="site-nav" aria-label="Navegação principal">
+                <a href="/">Sobre mim</a>
+                <a href="/formacao">Formação</a>
+                <a class="active" href="/projetos">Projetos</a>
+                <a href="/contato">Contato</a>
+            </nav>
+        </div>
     </header>
-    <main id="projetos">
-        <ul>
-            <li>
-                <a href="https://github.com/mmrezende/JValidate">JValidate</a>
-                <p>Uma biblioteca simples e extensível para validação de Java Beans</p>
-            </li>
+    <main>
+        <div class="site-shell">
+            <section class="page-intro glass-card hero-copy">
+                <div class="section-heading">
+                    <div>
+                        <span class="eyebrow">Portfólio técnico</span>
+                        <h1>Projetos em destaque</h1>
+                    </div>
+                    <p>
+                        Recorte curto para mostrar produto web, utilitários e base computacional.
+                    </p>
+                </div>
+            </section>
 
-            <li>
-                <a href="https://github.com/mmrezende/fortall-interpreter">fortall-interpreter</a>
-                <p>Um parser completo, envolvendo a análise léxica, sintática e semântica da pseudolinguagem Fortall.
-                    Implementado em C.</p>
-            </li>
-            
-            <li>
-                <a href="https://github.com/mmrezende/mips-tic-tac-toe">mips-tic-tac-toe</a>
-                <p>O clássico jogo da velha, inteiramente escrito em linguagem Assembly MIPS.</p>
-            </li>
-        </ul>
+            <section class="section">
+                <div class="project-grid">
+                    <article class="project-card glass-card featured">
+                        <div>
+                            <span class="eyebrow">Destaque atual</span>
+                            <h2>Max Late Game</h2>
+                            <div class="project-meta">Laravel • Vue 3 • MySQL • PHPUnit • Playwright</div>
+                            <p>
+                                Plataforma para gestão de torneios, pagamentos e assinaturas, com portal público, backoffice e área do jogador.
+                            </p>
+                            <ul class="bullet-list">
+                                <li>Fluxos completos de produto e operação.</li>
+                                <li>Backend Laravel com SPA em Vue.</li>
+                                <li>Documentação e demonstração visual já prontas.</li>
+                            </ul>
+                            <div class="project-links">
+                                <a class="project-link primary" href="https://github.com/mmrezende/auten-max-late-game" target="_blank" rel="noreferrer">Abrir repositório</a>
+                            </div>
+                        </div>
+                        <div>
+                            <h3>Recorte visual</h3>
+                            <div class="chip-row">
+                                <span class="chip">Portal público</span>
+                                <span class="chip">Backoffice</span>
+                                <span class="chip">Área do jogador</span>
+                            </div>
+                            <div class="screenshot-grid">
+                                <figure class="screenshot-card">
+                                    <img src="../assets/max-late-game/01-public-home-hero.png" alt="Home pública do projeto Max Late Game" />
+                                    <span>Home pública</span>
+                                </figure>
+                                <figure class="screenshot-card">
+                                    <img src="../assets/max-late-game/03-admin-dashboard.png" alt="Dashboard administrativo do projeto Max Late Game" />
+                                    <span>Dashboard admin</span>
+                                </figure>
+                                <figure class="screenshot-card">
+                                    <img src="../assets/max-late-game/08-user-profile.png" alt="Perfil do usuário no projeto Max Late Game" />
+                                    <span>Área do jogador</span>
+                                </figure>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card glass-card">
+                        <h3>JValidate</h3>
+                        <div class="project-meta">Java • Biblioteca utilitária</div>
+                        <p>Biblioteca para validação de Java Beans com foco em simplicidade e extensão.</p>
+                        <div class="project-links">
+                            <a class="project-link primary" href="https://github.com/mmrezende/JValidate" target="_blank" rel="noreferrer">Ver repositório</a>
+                        </div>
+                    </article>
+
+                    <article class="project-card glass-card">
+                        <h3>fortall-interpreter</h3>
+                        <div class="project-meta">C • Compiladores</div>
+                        <p>Parser com análise léxica, sintática e semântica para a linguagem Fortall.</p>
+                        <div class="project-links">
+                            <a class="project-link primary" href="https://github.com/mmrezende/fortall-interpreter" target="_blank" rel="noreferrer">Ver repositório</a>
+                        </div>
+                    </article>
+
+                    <article class="project-card glass-card">
+                        <h3>mips-tic-tac-toe</h3>
+                        <div class="project-meta">Assembly MIPS • Programação de baixo nível</div>
+                        <p>Jogo da velha em Assembly MIPS para demonstrar fundamentos de execução e memória.</p>
+                        <div class="project-links">
+                            <a class="project-link primary" href="https://github.com/mmrezende/mips-tic-tac-toe" target="_blank" rel="noreferrer">Ver repositório</a>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </div>
     </main>
+    <footer class="footer">
+        <div class="footer-inner">
+            <span>Projetos selecionados para mostrar amplitude técnica</span>
+            <span>Web, bibliotecas e fundamentos computacionais</span>
+        </div>
+    </footer>
 </body>
 
 </html>

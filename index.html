@@ -3,30 +3,111 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="description" content="Portfólio de Mateus Rezende, desenvolvedor full stack com atuação multidisciplinar em backend, frontend, produto e arquitetura." />
+    <title>Mateus Rezende | Desenvolvedor Full Stack</title>
     <link rel="stylesheet" type="text/css" href="index.css">
 </head>
 <body>
-    <header>
-        <!-- Menu de navegação -->
-        <nav class="flex">
-            <a href="/">Sobre mim</a>
-            <a href="/formacao">Formação</a>
-            <a href="/projetos">Meus Projetos</a>
-            <a href="/contato">Contato</a>
-        </nav>
+    <header class="site-header">
+        <div class="site-header-inner">
+            <a class="brand" href="/">
+                <span class="brand-mark"><img src="assets/pato-baile.gif" alt="Pato animado" /></span>
+                <span class="brand-text">
+                    <strong>Mateus Rezende</strong>
+                    <span>Full Stack • Backend, frontend, produto e arquitetura</span>
+                </span>
+            </a>
+            <nav class="site-nav" aria-label="Navegação principal">
+                <a class="active" href="/">Sobre mim</a>
+                <a href="/formacao">Formação</a>
+                <a href="/projetos">Projetos</a>
+                <a href="/contato">Contato</a>
+            </nav>
+        </div>
     </header>
     <main>
-        <div class="flex">
-            <img id="profile-picture" src="https://avatars.githubusercontent.com/u/42904101?v=4"/>
-            <ul id="description">
-                <li>🤔   Tentando descobrir como se centraliza uma div.</li>
-                <li>🎓   Cursando Ciência da Computação na UNINTER.</li>
-                <li>💼   Trabalhando como Desenvolvedor FullStack no Banco do Brasil.</li>
-                <li>🌱   Aprendendo mais sobre Java Beans e desenvolvimento de jogos com Unity no tempo livre.</li>
-                <li>🕹️   Viciado em Rust e um amante do gênero Soulslike.</li>
-            </ul>
+        <div class="site-shell">
+            <section class="hero">
+                <article class="glass-card hero-copy">
+                    <span class="eyebrow">Desenvolvedor pleno</span>
+                    <h1>Software com visão de produto e repertório amplo.</h1>
+                    <p>
+                        Atuo com backend, frontend, integrações, arquitetura e experiência do usuário. Laravel é uma das minhas bases mais fortes, mas não define sozinho o meu perfil.
+                    </p>
+                    <p>
+                        Trabalho com sistemas proprietários desde 2021 e valorizo versatilidade técnica, clareza de implementação e boa leitura de produto.
+                    </p>
+                    <div class="hero-actions">
+                        <a class="button" href="/projetos">Ver projetos em destaque</a>
+                        <a class="button-secondary" href="/contato">Falar comigo</a>
+                    </div>
+                </article>
+
+                <aside class="glass-card hero-panel">
+                    <div class="profile-header">
+                        <img src="https://avatars.githubusercontent.com/u/42904101?v=4" alt="Foto de perfil de Mateus Rezende" />
+                        <div>
+                            <h2 class="card-title">Mateus Rezende</h2>
+                            <p>Brasília, DF • Banco do Brasil • Freelancer desde 2021</p>
+                        </div>
+                    </div>
+
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <strong class="stat-value">5+</strong>
+                            <span>Anos de prática profissional</span>
+                        </div>
+                        <div class="stat-card">
+                            <strong class="stat-value">Multistack</strong>
+                            <span>PHP, Java, JS, TS, C e mais</span>
+                        </div>
+                        <div class="stat-card">
+                            <strong class="stat-value">Full Stack</strong>
+                            <span>Backend, frontend e integração</span>
+                        </div>
+                        <div class="stat-card">
+                            <strong class="stat-value">Autodidata</strong>
+                            <span>Prática com base teórica sólida</span>
+                        </div>
+                    </div>
+
+                    <p class="hero-note">
+                        Gosto de entender como as coisas funcionam. Isso aparece no código, na arquitetura e na forma como penso produto.
+                    </p>
+                </aside>
+            </section>
+
+            <section class="section">
+                <div class="section-heading">
+                    <div>
+                        <h2>Em poucas linhas</h2>
+                    </div>
+                    <p>
+                        Perfil generalista com profundidade em web, boa adaptação de stack e interesse real por produto e fundamentos de computação.
+                    </p>
+                </div>
+                <div class="compact-grid">
+                    <article class="highlight-card">
+                        <strong class="card-title">Backend</strong>
+                        <p>PHP, Laravel, Java e regras de negócio.</p>
+                    </article>
+                    <article class="highlight-card">
+                        <strong class="card-title">Frontend</strong>
+                        <p>React, Vue, Angular, TypeScript e UX.</p>
+                    </article>
+                    <article class="highlight-card">
+                        <strong class="card-title">Diferencial</strong>
+                        <p>Aprendizado rápido, clareza e visão de produto.</p>
+                    </article>
+                </div>
+            </section>
         </div>
     </main>
+    <footer class="footer">
+        <div class="footer-inner">
+            <span>Portfólio pessoal de Mateus Rezende</span>
+            <span>Desenvolvimento multidisciplinar para web e produto</span>
+        </div>
+    </footer>
 </body>
 </html>
