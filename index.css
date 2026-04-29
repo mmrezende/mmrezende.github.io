@@ -46,14 +46,28 @@ body::after {
     content: "";
     position: fixed;
     inset: 0;
-    background:
+    background-image:
+        url("/assets/visuals/tech-left.svg"),
+        url("/assets/visuals/tech-right.svg"),
+        url("/assets/visuals/tech-orbit.svg"),
         radial-gradient(circle at 8% 18%, rgba(86, 194, 255, 0.08), transparent 18%),
-        radial-gradient(circle at 92% 26%, rgba(123, 240, 198, 0.08), transparent 18%),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 0, transparent 12%),
-        linear-gradient(270deg, rgba(255, 255, 255, 0.03) 0, transparent 12%);
+        radial-gradient(circle at 92% 26%, rgba(123, 240, 198, 0.08), transparent 18%);
+    background-position:
+        left -120px top 140px,
+        right -120px top 140px,
+        center top,
+        center center,
+        center center;
+    background-size:
+        min(22vw, 300px) auto,
+        min(22vw, 300px) auto,
+        min(1180px, 96vw) auto,
+        auto,
+        auto;
     background-repeat: no-repeat;
     pointer-events: none;
     opacity: 0.8;
+    mix-blend-mode: screen;
 }
 
 * {
@@ -377,7 +391,6 @@ main {
 .section-heading h2,
 .section-heading h1 {
     font-size: clamp(1.6rem, 2.8vw, 2.5rem);
-    max-width: none;
 }
 
 .section-heading p {
@@ -408,88 +421,6 @@ main {
 
 .projects-page .page-intro .section-heading p {
     margin-inline: auto;
-}
-
-.projects-page {
-    position: relative;
-    isolation: isolate;
-    overflow: clip;
-}
-
-.projects-page .page-tech-rails {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    z-index: 0;
-}
-
-.projects-page .page-tech-rails .rail {
-    position: absolute;
-    top: 88px;
-    bottom: 88px;
-    width: min(20vw, 220px);
-    opacity: 0.74;
-}
-
-.projects-page .page-tech-rails .rail::before,
-.projects-page .page-tech-rails .rail::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-}
-
-.projects-page .page-tech-rails .rail::before {
-    border-radius: 999px;
-    background:
-        linear-gradient(180deg, transparent, rgba(86, 194, 255, 0.28) 16%, rgba(123, 240, 198, 0.08) 50%, transparent),
-        repeating-linear-gradient(180deg, rgba(255, 255, 255, 0.16) 0 1px, transparent 1px 18px);
-    mask-image: linear-gradient(180deg, transparent, #000 12%, #000 88%, transparent);
-}
-
-.projects-page .page-tech-rails .rail::after {
-    inset: 16px 44px;
-    border-radius: 999px;
-    background: radial-gradient(circle, rgba(86, 194, 255, 0.28), transparent 70%);
-    filter: blur(18px);
-}
-
-.projects-page .rail-left {
-    left: 16px;
-}
-
-.projects-page .rail-right {
-    right: 16px;
-}
-
-.projects-page .rail-network {
-    left: 50%;
-    transform: translateX(-50%);
-    width: min(34vw, 420px);
-    top: 38px;
-    bottom: auto;
-    height: 180px;
-}
-
-.projects-page .rail-network::before {
-    border-radius: 32px;
-    background:
-        radial-gradient(circle at 50% 14%, rgba(123, 240, 198, 0.22), transparent 28%),
-        radial-gradient(circle at 28% 46%, rgba(86, 194, 255, 0.2), transparent 24%),
-        radial-gradient(circle at 72% 46%, rgba(86, 194, 255, 0.2), transparent 24%),
-        linear-gradient(90deg, transparent 0, rgba(255, 255, 255, 0.08) 50%, transparent 100%);
-    mask-image: linear-gradient(180deg, transparent, #000 22%, #000 78%, transparent);
-}
-
-.projects-page .rail-network::after {
-    inset: 18px 20%;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(123, 240, 198, 0.2), transparent 68%);
-    filter: blur(22px);
-}
-
-.projects-page .site-shell {
-    position: relative;
-    z-index: 1;
 }
 
 .project-card.featured {
@@ -607,12 +538,6 @@ ol.clean-list {
 
 .project-links {
     margin-top: 18px;
-}
-
-.project-card {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
 }
 
 .project-link.primary,
@@ -777,25 +702,6 @@ ol.clean-list {
     box-shadow: 0 26px 80px rgba(0, 0, 0, 0.45);
 }
 
-.projects-page .project-grid {
-    gap: 28px;
-}
-
-.projects-page .featured-copy,
-.projects-page .featured-visuals {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.projects-page .featured-visuals {
-    align-items: stretch;
-}
-
-.home-summary {
-    display: none;
-}
-
 @media (min-width: 1025px) {
     .screenshot-card img {
         aspect-ratio: 16 / 8.5;
@@ -842,13 +748,25 @@ ol.clean-list {
         width: 100%;
         margin-inline: 0;
     }
-
-    .hero-copy h1 {
-        max-width: none;
-    }
 }
 
 @media (max-width: 780px) {
+    body::after {
+        background-image:
+            url("/assets/visuals/tech-orbit.svg"),
+            radial-gradient(circle at 8% 18%, rgba(86, 194, 255, 0.06), transparent 18%),
+            radial-gradient(circle at 92% 26%, rgba(123, 240, 198, 0.06), transparent 18%);
+        background-position:
+            center top,
+            center center,
+            center center;
+        background-size:
+            min(140vw, 900px) auto,
+            auto,
+            auto;
+        opacity: 0.55;
+    }
+
     .site-header-inner,
     .footer-inner {
         width: min(calc(100% - 28px), var(--content-width));
